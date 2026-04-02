@@ -1,5 +1,6 @@
+---
 name: thesis-generate
-description: Generate or update thesis LaTeX sources from structured user material. Use EasyLatex templates and workflow first, then enforce the active repository's rules.
+description: Generate or update thesis LaTeX sources from structured user material. Use EasyLatex templates and workflow first, then enforce the active project's rules.
 ---
 
 # Thesis Generate
@@ -12,9 +13,9 @@ description: Generate or update thesis LaTeX sources from structured user materi
 
 ## First Read
 
-1. Read the active repository rule file first. In this repo that is `D:/whuthesis/doc/rules.md`.
+1. Read the active project rule file first.
 2. Read `D:/whuthesis/EasyLatex/workflows/txt-to-latex-workflow.md`.
-3. Open only the specific repository files needed for the current task.
+3. Open only the specific project files needed for the current task.
 
 ## Canonical EasyLatex Inputs
 
@@ -29,11 +30,11 @@ description: Generate or update thesis LaTeX sources from structured user materi
 2. Determine `class` when applicable.
 3. Choose a stable task slug.
 4. Parse source content into metadata, abstracts, chapters, appendix, and references.
-5. Start from `demo.tex` structure rather than an empty file.
+5. Start from the target project's entry-file structure rather than an empty file.
 6. Bind task-specific body files from the root entry file.
 7. Keep shared wrapper files generic.
 8. Generate `pages/*.tex` and `ref/*.bib`.
-9. Prefer TexPage-compatible defaults unless the user requests otherwise.
+9. Prefer portable compile defaults unless the project explicitly requires something else.
 
 ## Source-Specific Rules
 
@@ -42,13 +43,15 @@ description: Generate or update thesis LaTeX sources from structured user materi
 - Preserve `【留空】` as an intentional empty block.
 - Normalize copied artifacts such as `&amp;`.
 - Do not invent missing bibliography facts.
+- If the active project rules reference official standards, manuals, or example deliverables, fold those constraints into the final validation pass.
 
 ## Hard Constraints
 
 - Do not handwrite frontmatter pages.
-- Do not overwrite `pages/abstract.tex`, `pages/enabstract.tex`, or `pages/innovation.tex` with task content.
+- Do not overwrite shared wrapper files with task content.
 - Do not use raw `\bibliography`.
-- Do not move the root thesis entry file into a subdirectory.
+- Do not move the root thesis entry file into a subdirectory unless the target project is explicitly designed that way.
+- Do not switch to a newer citation or bibliography standard before the active project rules explicitly adopt it.
 
 ## Maintenance Sync Rule
 

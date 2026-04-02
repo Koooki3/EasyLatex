@@ -1,5 +1,6 @@
+---
 name: thesis-review
-description: Review, audit, or repair thesis LaTeX sources against the EasyLatex workflow and the active repository's exact rules.
+description: Review, audit, or repair thesis LaTeX sources against the EasyLatex workflow and the active project's exact rules.
 ---
 
 # Thesis Review
@@ -7,11 +8,11 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 ## Use This Skill When
 
 - the user asks for an audit, repair, compliance check, or structural review
-- the repository already contains `.tex` sources that may violate the template contract
+- the project already contains `.tex` sources that may violate the template contract
 
 ## First Read
 
-1. Read the active repository rule file first. In this repo that is `D:/whuthesis/doc/rules.md`.
+1. Read the active project rule file first.
 2. Read `D:/whuthesis/EasyLatex/workflows/txt-to-latex-workflow.md`.
 3. Read the active root `.tex` file.
 
@@ -21,11 +22,12 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 2. Broken repository structure
 3. Missing `\whusetup` fields
 4. Missing `bib-backend` or `bib-resource`
-5. Drift from any official standard/example set referenced by the active repo rules
-6. Shared wrapper files overwritten with task content
-7. Manual frontmatter or bibliography hacks
-8. Placeholder handling regressions from source conversion
-9. TexPage compatibility risks
+5. Missing checks against any official standards, examples, or style constraints referenced by the active project rules
+6. Citation-standard transitions applied too early
+7. Shared wrapper files overwritten with task content
+8. Manual frontmatter or bibliography hacks
+9. Placeholder handling regressions from source conversion
+10. Target-environment compatibility risks
 
 ## Conversion Checks
 
@@ -33,7 +35,7 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 - `【留空】` was not expanded into fabricated prose
 - reference input stayed traceable to the original numbered entries
 - task-specific content lives in task-specific files
-- if the repo rules define abstract-length or keyword-count constraints, those constraints are checked explicitly
+- if the project rules define abstract-length, keyword-count, layout, or standard-transition checks, those checks were run explicitly
 
 ## Fix Strategy
 

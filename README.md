@@ -42,6 +42,7 @@ It is especially suitable for:
 - Reviewable intermediate structure
 - Easy extension from `.txt` to `.docx`
 - Compatible with repository-specific rules when needed
+- Able to absorb official standards or example-based checks from the target project
 
 - 通用化，而不是绑定某个学校标识
 - 模板驱动的源文件采集
@@ -185,6 +186,7 @@ The recommended workflow is deterministic and review-friendly.
 8. Generate the target LaTeX project files.
 9. Run the review pass.
 10. Fix structure before adjusting wording or style.
+11. If the target project references official standards or sample deliverables, run those checks before sign-off.
 
 推荐工作流是可重复、可审查的：
 
@@ -259,6 +261,7 @@ Check:
 - title hierarchy
 - placeholder preservation
 - compatibility with the target class or template
+- any official style or standard constraints adopted by the target project
 
 ### 7. Re-run if needed
 
