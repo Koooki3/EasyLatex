@@ -40,6 +40,7 @@ description: Generate or update thesis LaTeX sources from structured user materi
 
 - Treat LaTeX math as source, not prose.
 - Treat standalone `图x.x.x ...` and `表x.x.x ...` lines as centered placeholders.
+- When the active project is `whu-thesis`, structured **Markdown pipe tables** in `.txt` should become `table` floats with **`booktabs` 三线表** (`\toprule`/`\midrule`/`\bottomrule`), `\caption` above `tabular`, per `doc/rules.md` §12.1 and §15.1.
 - Preserve `【留空】` as an intentional empty block.
 - Normalize copied artifacts such as `&amp;`.
 - Do not invent missing bibliography facts.

@@ -40,6 +40,7 @@ Turn a structured `.txt` source file into repository-ready LaTeX sources without
 6. Detect structural markers.
    - heading levels `#`, `##`, `###`, `####`
    - standalone `图x.x.x ...` or `表x.x.x ...` placeholders
+   - **GitHub-style pipe tables** (`| col | col |` with header row and `|---|` separator): when the target is `whu-thesis`, convert to a `table` float with **三线表** using `booktabs` (`\toprule`, `\midrule`, `\bottomrule`). `whu-thesis.cls` already loads `booktabs`. Place `\caption` **above** the `tabular` (see `doc/rules.md` §12.1). Do not use vertical rules; prefer `@{}...@{}` column specs. Cell content with code identifiers or underscores should use `\texttt{}` with escaped `_` where needed.
 7. Generate repository files.
    - start from the demo structure
    - bind task-specific abstract body files from the root entry file

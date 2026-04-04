@@ -40,12 +40,15 @@ $$
 图3.3.1 系统架构简图
 表3.2.1 消融实验结果
 
-六、参考文献写法
+六、结构化表格（Markdown 竖线表）
+若正文需要可编译的表格而非仅占位标题，可使用与 GitHub Markdown 类似的竖线表（表头一行、分隔行 `|------|`、数据行若干）。转换到本仓库 `whu-thesis` 时，应输出为 `table` 环境内的 **三线表**：使用 `booktabs` 的 `\toprule`、`\midrule`、`\bottomrule`，表题在表上方（先 `\caption` 再 `tabular`），与 `doc/rules.md` 第 12.1 节及本科印制规范一致。代码类单元格用反引号标注的在 `.tex` 中对应 `\texttt{...}`。
+
+七、参考文献写法
 每条文献使用一条完整编号文本，示例：
 [1] BHATTACHARYA A, CLOUTIER S G. End-to-end deep learning framework for printed circuit board manufacturing defect classification[J/OL]. Scientific Reports, 2022, 12(1). https://doi.org/10.1038/s41598-022-16302-3. DOI:10.1038/s41598-022-16302-3.
 [2] NGUYEN V T, KIEU X T, CHU D T, et al. Deep learning-enhanced defects detection for printed circuit boards[J/OL]. Results in Engineering, 2025, 25: 104067. https://doi.org/10.1016/j.rineng.2025.104067. DOI:10.1016/j.rineng.2025.104067.
 
-七、提交前自检
+八、提交前自检
 1. 是否使用了正确模板
 2. 是否保留全部一级块
 3. 空内容是否统一写成 `【留空】`
