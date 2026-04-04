@@ -69,6 +69,7 @@ Turn a structured `.txt` source file into repository-ready LaTeX sources without
 - Do not handwrite covers, originality statements, or license pages.
 - Do not replace shared wrapper files with task-specific manuscript text.
 - Use `\printbibliography` rather than raw bibliography commands.
+- For Wuhan University bachelor optional “相关科研成果目录”, use the `publications` environment (defined only for `type = bachelor`) after `\printbibliography` and before acknowledgements when the active `whu-thesis.cls` provides it.
 - Do not switch citation or bibliography standards early unless the target project has explicitly adopted the newer standard.
 - If the target project adds official abstract, keyword, or layout checks, run them before delivery.
 
