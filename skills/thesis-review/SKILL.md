@@ -15,6 +15,9 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 1. Read the active project rule file first.
 2. Read `D:/whuthesis/EasyLatex/workflows/txt-to-latex-workflow.md`.
 3. Read the active root `.tex` file.
+4. If equations are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-equation-format/SKILL.md`.
+5. If figures are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-figure-layout/SKILL.md`.
+6. If tables are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-three-line-table/SKILL.md`.
 
 ## Review Priorities
 
@@ -28,6 +31,7 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 8. Manual frontmatter or bibliography hacks
 9. Placeholder handling regressions from source conversion
 10. Target-environment compatibility risks
+11. Equation, figure, and table formatting regressions against the companion formatting skills
 
 ## Conversion Checks
 
@@ -36,6 +40,9 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 - reference input stayed traceable to the original numbered entries
 - task-specific content lives in task-specific files
 - if the project rules define abstract-length, keyword-count, layout, or standard-transition checks, those checks were run explicitly
+- displayed equations use LaTeX environments rather than `$$`
+- figure captions remain below figures and table captions remain above tables
+- 正文数据表 remain three-line tables unless the project rules explicitly justify another pattern
 
 ## Fix Strategy
 

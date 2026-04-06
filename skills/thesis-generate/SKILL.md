@@ -16,6 +16,9 @@ description: Generate or update thesis LaTeX sources from structured user materi
 1. Read the active project rule file first.
 2. Read `D:/whuthesis/EasyLatex/workflows/txt-to-latex-workflow.md`.
 3. Open only the specific project files needed for the current task.
+4. If the task writes or fixes displayed equations, read `D:/whuthesis/EasyLatex/skills/thesis-equation-format/SKILL.md`.
+5. If the task writes or fixes figures or subfigures, read `D:/whuthesis/EasyLatex/skills/thesis-figure-layout/SKILL.md`.
+6. If the task writes or fixes data tables, read `D:/whuthesis/EasyLatex/skills/thesis-three-line-table/SKILL.md`.
 
 ## Canonical EasyLatex Inputs
 
@@ -35,6 +38,7 @@ description: Generate or update thesis LaTeX sources from structured user materi
 7. Keep shared wrapper files generic.
 8. Generate `pages/*.tex` and `ref/*.bib`.
 9. Prefer portable compile defaults unless the project explicitly requires something else.
+10. Delegate equation, figure, and table formatting details to the companion formatting skills instead of duplicating local ad hoc patterns.
 
 ## Source-Specific Rules
 

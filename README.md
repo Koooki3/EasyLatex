@@ -55,7 +55,7 @@ It is especially suitable for:
 
 - Standard source templates for structured writing
 - A canonical `.txt -> LaTeX` workflow
-- Reusable generation and review skills
+- Reusable generation, review, equation-format, figure-layout, and table-format skills
 - A reserved adapter boundary for `.docx`
 - A clear separation between generic workflow and project-specific constraints
 
@@ -76,6 +76,12 @@ EasyLatex/
     thesis-generate/
       SKILL.md
     thesis-review/
+      SKILL.md
+    thesis-equation-format/
+      SKILL.md
+    thesis-figure-layout/
+      SKILL.md
+    thesis-three-line-table/
       SKILL.md
   templates/
     conversion-source-guide.txt
@@ -355,6 +361,15 @@ If the source changes, repeat the same pipeline rather than editing generated ou
 
 - [thesis-review/SKILL.md](/D:/whuthesis/EasyLatex/skills/thesis-review/SKILL.md)
   Reusable review skill.
+
+- [thesis-equation-format/SKILL.md](/D:/whuthesis/EasyLatex/skills/thesis-equation-format/SKILL.md)
+  Companion skill for displayed equations and equation references.
+
+- [thesis-figure-layout/SKILL.md](/D:/whuthesis/EasyLatex/skills/thesis-figure-layout/SKILL.md)
+  Companion skill for figures and subfigures.
+
+- [thesis-three-line-table/SKILL.md](/D:/whuthesis/EasyLatex/skills/thesis-three-line-table/SKILL.md)
+  Companion skill for three-line tables and Markdown pipe-table conversion.
 
 ## Extension Strategy | 扩展策略
 
