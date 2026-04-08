@@ -15,10 +15,11 @@ description: Generate or update thesis LaTeX sources from structured user materi
 
 1. Read the active project rule file first.
 2. Read `D:/whuthesis/EasyLatex/workflows/txt-to-latex-workflow.md`.
-3. Open only the specific project files needed for the current task.
-4. If the task writes or fixes displayed equations, read `D:/whuthesis/EasyLatex/skills/thesis-equation-format/SKILL.md`.
-5. If the task writes or fixes figures or subfigures, read `D:/whuthesis/EasyLatex/skills/thesis-figure-layout/SKILL.md`.
-6. If the task writes or fixes data tables, read `D:/whuthesis/EasyLatex/skills/thesis-three-line-table/SKILL.md`.
+3. If the task touches `.docx`, `.xlsx`, `.csv`, `.json`, `.yaml`, or other exchange files, read `D:/whuthesis/EasyLatex/workflows/file-encoding-policy.md`.
+4. Open only the specific project files needed for the current task.
+5. If the task writes or fixes displayed equations, read `D:/whuthesis/EasyLatex/skills/thesis-equation-format/SKILL.md`.
+6. If the task writes or fixes figures or subfigures, read `D:/whuthesis/EasyLatex/skills/thesis-figure-layout/SKILL.md`.
+7. If the task writes or fixes data tables, read `D:/whuthesis/EasyLatex/skills/thesis-three-line-table/SKILL.md`.
 
 ## Canonical EasyLatex Inputs
 
@@ -32,13 +33,14 @@ description: Generate or update thesis LaTeX sources from structured user materi
 1. Determine `type`.
 2. Determine `class` when applicable.
 3. Choose a stable task slug.
-4. Parse source content into metadata, abstracts, chapters, appendix, and references.
-5. Start from the target project's entry-file structure rather than an empty file.
-6. Bind task-specific body files from the root entry file.
-7. Keep shared wrapper files generic.
-8. Generate `pages/*.tex` and `ref/*.bib`.
-9. Prefer portable compile defaults unless the project explicitly requires something else.
-10. Delegate equation, figure, and table formatting details to the companion formatting skills instead of duplicating local ad hoc patterns.
+4. Declare the canonical editable source when multiple file types coexist.
+5. Parse source content into metadata, abstracts, chapters, appendix, and references.
+6. Start from the target project's entry-file structure rather than an empty file.
+7. Bind task-specific body files from the root entry file.
+8. Keep shared wrapper files generic.
+9. Generate `pages/*.tex` and `ref/*.bib`.
+10. Prefer portable compile defaults unless the project explicitly requires something else.
+11. Delegate equation, figure, and table formatting details to the companion formatting skills instead of duplicating local ad hoc patterns.
 
 ## Source-Specific Rules
 
@@ -47,6 +49,7 @@ description: Generate or update thesis LaTeX sources from structured user materi
 - When the active project is `whu-thesis`, structured **Markdown pipe tables** in `.txt` should become `table` floats with **`booktabs` 三线表** (`\toprule`/`\midrule`/`\bottomrule`), `\caption` above `tabular`, per `doc/rules.md` §12.1 and §15.1.
 - Preserve `【留空】` as an intentional empty block.
 - Normalize copied artifacts such as `&amp;`.
+- Apply `D:/whuthesis/EasyLatex/workflows/file-encoding-policy.md` when the task reads from or writes to exchange files such as `.docx`, `.csv`, `.json`, or `.yaml`.
 - Do not invent missing bibliography facts.
 - If the active project rules reference official standards, manuals, or example deliverables, fold those constraints into the final validation pass.
 
@@ -57,6 +60,8 @@ description: Generate or update thesis LaTeX sources from structured user materi
 - Do not use raw `\bibliography`.
 - Do not move the root thesis entry file into a subdirectory unless the target project is explicitly designed that way.
 - Do not switch to a newer citation or bibliography standard before the active project rules explicitly adopt it.
+- Do not rely on platform-default encodings for text serialization.
+- Do not treat `.docx` or `.xlsx` as plain-text files.
 
 ## Maintenance Sync Rule
 

@@ -8,6 +8,7 @@ Turn a structured `.txt` source file into repository-ready LaTeX sources without
 
 - Active input: `.txt`
 - Planned extension: `.docx` through a normalization adapter
+- Cross-format safety policy: `D:/whuthesis/EasyLatex/workflows/file-encoding-policy.md`
 - Output targets:
   - root thesis entry `.tex`
   - `pages/<task>-abstract-body.tex`
@@ -54,15 +55,18 @@ Turn a structured `.txt` source file into repository-ready LaTeX sources without
    - check `bib-resource`
    - check auto frontmatter rules
    - check any official standards, example documents, or style constraints surfaced by the target project rules
+   - check file-encoding and serialization safety for any exchange artifacts involved
 
 ## Input Rules
 
 - Source must be plain text.
+- Canonical repository `.txt` sources should use `UTF-8` unless the active project rules explicitly define another interchange format.
 - Do not paste images, tables, screenshots, or Word layout artifacts.
 - Titles should not include manual numbering like `第一章` or `1.1`.
 - References should use `[n] full entry text`.
 - Figure and table placeholders must be on their own lines.
 - If the target project references official standards or example files, treat them as validation inputs rather than optional reading.
+- If the same manuscript also exists as `.docx` or another delivery format, decide which file is canonical before editing.
 
 ## Output Rules
 
@@ -77,3 +81,9 @@ Turn a structured `.txt` source file into repository-ready LaTeX sources without
 ## Extension Boundary for DOCX
 
 The `.docx` path should only add a source adapter. It should not fork the downstream LaTeX generation flow. After extraction and normalization, the data model should match the `.txt` workflow exactly.
+
+When `.docx` is involved:
+
+- read and write it through structure-aware tooling, not plain-text encoding tricks
+- normalize extracted text into `UTF-8` before entering the downstream `.txt` workflow
+- verify the delivery document with the target application when the task also outputs `.docx`

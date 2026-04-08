@@ -14,10 +14,11 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 
 1. Read the active project rule file first.
 2. Read `D:/whuthesis/EasyLatex/workflows/txt-to-latex-workflow.md`.
-3. Read the active root `.tex` file.
-4. If equations are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-equation-format/SKILL.md`.
-5. If figures are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-figure-layout/SKILL.md`.
-6. If tables are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-three-line-table/SKILL.md`.
+3. If the task touches `.docx`, `.xlsx`, `.csv`, `.json`, `.yaml`, or other exchange files, read `D:/whuthesis/EasyLatex/workflows/file-encoding-policy.md`.
+4. Read the active root `.tex` file.
+5. If equations are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-equation-format/SKILL.md`.
+6. If figures are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-figure-layout/SKILL.md`.
+7. If tables are in scope, read `D:/whuthesis/EasyLatex/skills/thesis-three-line-table/SKILL.md`.
 
 ## Review Priorities
 
@@ -30,8 +31,9 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 7. Shared wrapper files overwritten with task content
 8. Manual frontmatter or bibliography hacks
 9. Placeholder handling regressions from source conversion
-10. Target-environment compatibility risks
-11. Equation, figure, and table formatting regressions against the companion formatting skills
+10. Unsafe encoding or serialization paths for exchange files
+11. Target-environment compatibility risks
+12. Equation, figure, and table formatting regressions against the companion formatting skills
 
 ## Conversion Checks
 
@@ -43,12 +45,16 @@ description: Review, audit, or repair thesis LaTeX sources against the EasyLatex
 - displayed equations use LaTeX environments rather than `$$`
 - figure captions remain below figures and table captions remain above tables
 - 正文数据表 remain three-line tables unless the project rules explicitly justify another pattern
+- exchange files were reopened with the target parser or application after writing
+- no new mojibake markers such as unexpected `?` or `�` were introduced into user-visible content
+- `.docx` and `.xlsx` were handled with structure-aware tooling rather than plain-text writes
 
 ## Fix Strategy
 
 - prefer the smallest patch that restores compliance
 - preserve user manuscript content whenever possible
 - change structure before changing prose
+- if a delivery artifact is heavily corrupted, rebuild it from a clean canonical source instead of retrying ad hoc re-encoding
 
 ## Maintenance Sync Rule
 
