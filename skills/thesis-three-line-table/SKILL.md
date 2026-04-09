@@ -25,6 +25,7 @@ description: Format thesis data tables as booktabs three-line tables with captio
   - `\bottomrule`
 - Use `table` or `longtable` depending on expected length.
 - Place the caption above the table body.
+- Keep the final table width within the text block. If a table is materially narrower than the text block, center it instead of stretching it to fake a full-width look.
 - Prefer column specs like `@{}lcc@{}` or paragraph columns without vertical rules.
 - When a table is width-sensitive, prefer `xltabular` with a mix of:
   - one natural-width non-wrapping column for short labels such as `类别` or `参数项`
@@ -39,8 +40,9 @@ description: Format thesis data tables as booktabs three-line tables with captio
 4. Normalize units, abbreviations, and naming before finalizing the table.
 5. Rebalance column widths using the longest cell in each column rather than header text alone.
 6. If the table contains long ASCII tokens, configuration enums, or underscore-heavy keys, give the code-heavy column more width and let explanatory columns wrap.
-7. For dense engineering tables, prefer a slightly smaller body size such as `\zihao{-5}`, moderate `\tabcolsep` such as `4pt`, and `\arraystretch` around `1.1` to `1.2`.
-8. Add a body reference before the table, for example `各数据集训练设置如表~\ref{tab:paper-ch4-train-origin}所示`.
+7. For wide engineering result tables, shorten headers first, then add controlled header line breaks where needed; do not rely on uncontrolled auto-wrap in Word or PDF output.
+8. For dense engineering tables, prefer a slightly smaller body size such as `\zihao{-5}`, moderate `\tabcolsep` such as `4pt`, and `\arraystretch` around `1.1` to `1.2`.
+9. Add a body reference before the table, for example `各数据集训练设置如表~\ref{tab:paper-ch4-train-origin}所示`.
 
 ## Hard Constraints
 
@@ -50,6 +52,7 @@ description: Format thesis data tables as booktabs three-line tables with captio
 - Do not leave unexplained abbreviations in headers when the same table can stay readable with expanded wording.
 - Do not leave obvious visual crowding unresolved when a different column allocation would fix it.
 - Do not force a long identifier column to wrap awkwardly if the same table can stay readable by giving that column natural width and reallocating the remaining width.
+- Do not let the `.docx` delivery version silently diverge from the LaTeX table strategy; if Word output crowds or overlaps, fix the generation rule rather than hand-correcting one table.
 
 ## Label Style
 
