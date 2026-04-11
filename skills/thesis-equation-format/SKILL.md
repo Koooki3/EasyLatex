@@ -1,6 +1,6 @@
 ---
 name: thesis-equation-format
-description: Format thesis equations in LaTeX with consistent numbering, lead-in text, and symbol explanations. Use when drafting, converting, reviewing, or fixing displayed equations in thesis chapters, especially when the target project requires equation references like “如式~\\ref{...}所示”, right-side “式 x.x” numbering, and post-equation “式中” explanations.
+description: Format thesis equations in LaTeX with consistent numbering, lead-in text, and symbol explanations. Use when drafting, converting, reviewing, or fixing displayed equations in thesis chapters, especially when the target project requires equation references like “如式\\eqref{...}所示”, right-side “(x.x)” numbering, and post-equation “式中” explanations.
 ---
 
 # Thesis Equation Format
@@ -24,7 +24,7 @@ description: Format thesis equations in LaTeX with consistent numbering, lead-in
    - `equation` for a single displayed formula
    - `align` for aligned multi-line formulas
    - `aligned` or `split` inside `equation` when one equation number should cover multiple lines
-3. Add a lead-in sentence before each displayed formula, for example `如式~\ref{eq:paper-ch3-yolo-loss}所示，...`.
+3. Add a lead-in sentence before each displayed formula, for example `如式\eqref{eq:paper-ch3-yolo-loss}所示，...`.
 4. Add a label to every displayed formula that may be referenced later.
 5. Follow the displayed formula with a short explanation. Use `式中，` when symbols need definition.
 6. Reuse existing symbol meanings within the same chapter. Do not silently rename symbols mid-chapter.
@@ -42,20 +42,20 @@ description: Format thesis equations in LaTeX with consistent numbering, lead-in
   - `eq:paper-ch3-yolo-loss`
   - `eq:paper-ch3-nwd-distance`
   - `eq:paper-ch4-exp-alias`
-- Reference formulas with `式~\ref{...}` or in a lead-in sentence `如式~\ref{...}所示`.
+- Reference formulas with `式\eqref{...}` or in a lead-in sentence `如式\eqref{...}所示`.
 - Keep label prefixes stable across the manuscript.
 
 ## Output Expectations
 
 - Displayed equations are centered by the environment itself.
 - Equation numbers stay on the right.
-- If the target project requires the visual style `式 x.x`, implement that once in the root entry file instead of patching formulas individually.
+- If the target project keeps the default thesis style, use right-side `(x.x)` equation numbers and reference them with `\eqref` instead of patching formulas individually.
 - Symbol explanations remain concise and thesis-style, not textbook-style lists unless the formula is dense.
 
 ## Example
 
 ```tex
-如式~\ref{eq:paper-ch3-nwd-sim}所示，归一化 Wasserstein 距离可写为
+如式\eqref{eq:paper-ch3-nwd-sim}所示，归一化 Wasserstein 距离可写为
 \begin{equation}
   \label{eq:paper-ch3-nwd-sim}
   \mathrm{NWD}(B_p,B_g)=\exp\left(-\frac{\sqrt{W_2^2(B_p,B_g)}}{C}\right).
